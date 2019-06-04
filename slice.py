@@ -11,8 +11,8 @@ def extractImages(pathIn, pathOut):
     while success:
       vidcap.set(cv2.CAP_PROP_POS_MSEC,(count*1000))    # added this line 
       success,image = vidcap.read()
-      print ('Read a new frame: ', success)
-      cv2.imwrite( pathOut + "\\frame%d.jpg" % count, image)     # save frame as JPEG file
+      print ("Frame %d Created!" % count)
+      cv2.imwrite( pathOut + "%d.jpg" % count, image)     # save frame as JPEG file
       count = count + 1
-extractImages("Data/presenter.mp4", "img/presenter")#presenter
-#extractImages(Data/crowd.mp4, img/crowd)#crowd
+extractImages("Data/presenter.mp4", "img/presenter/Presenter")#presenter
+#extractImages("Data/crowd.mp4", "img/crowd/Crowd")#crowd
